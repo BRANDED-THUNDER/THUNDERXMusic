@@ -1,4 +1,4 @@
-import os
+ import os
 import re
 import yt_dlp
 from pyrogram import Client, filters
@@ -23,13 +23,7 @@ from BrandrdXMusic.utils.inline.song import song_markup
 
 # Song Module
 
-
-@app.on_message(
-    filters.command("Song")
-    & filters.private
-    & ~filters.edited
-    & ~BANNED_USERS
-)
+@app.on_message(filters.command(["song"]))
 @language
 async def song_commad_private(client, message: Message, _):
     await message.delete()
